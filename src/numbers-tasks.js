@@ -215,8 +215,17 @@ function roundToPowerOfTen(num, pow) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  if ((n > 2 && n % 2 === 0) || (n > 3 && n % 3 === 0)) {
+    return false;
+  }
+  if (n > 5 && n % 5 === 0) {
+    return false;
+  }
+  if (n > 7 && n % 7 === 0) {
+    return false;
+  }
+  return true;
 }
 
 /**
@@ -234,8 +243,11 @@ function isPrime(/* n */) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+function toNumber(value, def) {
+  if (Number(value)) {
+    return value;
+  }
+  return def;
 }
 
 /**
@@ -249,8 +261,8 @@ function toNumber(/* value, def */) {
  *   -2 => -8
  *   0  => 0
  */
-function getCube(/* num */) {
-  throw new Error('Not implemented');
+function getCube(num) {
+  return num ** 3;
 }
 
 /**
